@@ -1,0 +1,5 @@
+djoser==1.7.0
+django_rest_swagger==2.2.0
+Django==2.2.3
+dj_database_url==0.5.0
+djangorestframework==3.9.4

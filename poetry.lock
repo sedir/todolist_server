@@ -150,6 +150,14 @@ django-templated-mail = "*"
 
 [[package]]
 category = "dev"
+description = "Pythonic argument parser, that will make you smile"
+name = "docopt"
+optional = false
+python-versions = "*"
+version = "0.6.2"
+
+[[package]]
+category = "dev"
 description = "Discover and load entry points from installed packages."
 name = "entrypoints"
 optional = false
@@ -283,6 +291,18 @@ version = "1.3.2"
 
 [package.dependencies]
 coreapi = ">=2.2.0"
+
+[[package]]
+category = "dev"
+description = "Pip requirements.txt generator based on imports in project"
+name = "pipreqs"
+optional = false
+python-versions = "*"
+version = "0.4.9"
+
+[package.dependencies]
+docopt = "*"
+yarg = "*"
 
 [[package]]
 category = "dev"
@@ -455,6 +475,17 @@ version = "1.11.2"
 
 [[package]]
 category = "dev"
+description = "A semi hard Cornish cheese, also queries PyPI (PyPI client)"
+name = "yarg"
+optional = false
+python-versions = "*"
+version = "0.1.9"
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
+category = "dev"
 description = "Backport of pathlib-compatible object wrapper for zip files"
 name = "zipp"
 optional = false
@@ -466,7 +497,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "aa615b05cbf305fa034915265affc5983a7e2a18337f098e6813c605e5e92119"
+content-hash = "7e97fad835201250da8f1f9ed6541aa4a7da61b5176472ebe92ab7f99627b156"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -484,6 +515,7 @@ django-rest-swagger = ["48f6aded9937e90ae7cbe9e6c932b9744b8af80cc4e010088b3278c7
 django-templated-mail = ["8db807effebb42a532622e2d142dfd453dafcd0d7794c4c3332acb90656315f9", "f7127e1e31d7cad4e6c4b4801d25814d4b8782627ead76f4a75b3b7650687556"]
 djangorestframework = ["376f4b50340a46c15ae15ddd0c853085f4e66058f97e4dbe7d43ed62f5e60651", "c12869cfd83c33d579b17b3cb28a2ae7322a53c3ce85580c2a2ebe4e3f56c4fb"]
 djoser = ["1e310801b225ea668a035d3da90c1c9ca5b80a294235b9a25a5999fbc9ac5a96", "d0ca48a05f590d77d6d292177c735a92b639f78a7060c1861d9b5317843a0685"]
+docopt = ["49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"]
 entrypoints = ["589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19", "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"]
 flake8 = ["859996073f341f2670741b51ec1e67a01da142831aa1fdc6242dbf88dffbe661", "a796a115208f5c03b18f332f7c11729812c8c3ded6c46319c59b53efd3819da8"]
 gunicorn = ["aa8e0b40b4157b36a5df5e599f45c9c76d6af43845ba3b3b0efe2c70473c2471", "fa2662097c66f920f53f70621c6c58ca4a3c4d3434205e608e121b5b3b71f4f3"]
@@ -497,6 +529,7 @@ markupsafe = ["00bc623926325b26bb9605ae9eae8a215691f33cae5df11ca5424f06f2d1f473"
 mccabe = ["ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42", "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"]
 more-itertools = ["3ad685ff8512bf6dc5a8b82ebf73543999b657eded8c11803d9ba6b648986f4d", "8bb43d1f51ecef60d81854af61a3a880555a14643691cc4b64a6ee269c78f09a"]
 openapi-codec = ["1bce63289edf53c601ea3683120641407ff6b708803b8954c8a876fe778d2145"]
+pipreqs = ["2dfa21631cb68a97515e222d6f0033b5bfb75823567ca2195d528efb18c97990", "cec6eecc4685967b27eb386037565a737d036045f525b9eb314631a68d60e4bc"]
 pluggy = ["0825a152ac059776623854c1543d65a4ad408eb3d33ee114dff91e57ec6ae6fc", "b9817417e95936bf75d85d3f8767f7df6cdde751fc40aed3bb3074cbcb77757c"]
 py = ["64f65755aee5b381cea27766a3a147c3f15b9b6b9ac88676de66ba2ae36793fa", "dc639b046a6e2cff5bbe40194ad65936d6ba360b52b3c3fe1d08a82dd50b5e53"]
 pycodestyle = ["95a2219d12372f05704562a14ec30bc76b05a5b297b21a5dfe3f6fac3491ae56", "e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c"]
@@ -513,4 +546,5 @@ uritemplate = ["01c69f4fe8ed503b2951bef85d996a9d22434d2431584b5b107b2981ff416fbd
 urllib3 = ["b246607a25ac80bedac05c6f282e3cdaf3afb65420fd024ac94435cabe6e18d1", "dbe59173209418ae49d485b87d1681aefa36252ee85884c31346debd19463232"]
 whitenoise = ["118ab3e5f815d380171b100b05b76de2a07612f422368a201a9ffdeefb2251c1", "42133ddd5229eeb6a0c9899496bdbe56c292394bf8666da77deeb27454c0456a"]
 wrapt = ["565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1"]
+yarg = ["4f9cebdc00fac946c9bf2783d634e538a71c7d280a4d806d45fd4dc0ef441492", "55695bf4d1e3e7f756496c36a69ba32c40d18f821e38f61d028f6049e5e15911"]
 zipp = ["8c1019c6aad13642199fbe458275ad6a84907634cc9f0989877ccc4a2840139d", "ca943a7e809cc12257001ccfb99e3563da9af99d52f261725e96dfe0f9275bc3"]
