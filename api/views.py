@@ -1,20 +1,17 @@
-from rest_framework import viewsets, mixins
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.schemas import SchemaGenerator
-from rest_framework.views import APIView
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from api.models import TodoItem
 from api.serializers import TodoSerializer
-from rest_framework_swagger import renderers
+from api.permissions import IsOwnerOrReadOnly
 # Create your views here.
 
 
 class TodoViewSet(viewsets.ModelViewSet):
     """
-    A set of endpoints to list, create and delete To Do items.
+    A set of endpoints to list, create, update and delete To Do items.
     """
-    
-    permission_classes = (IsAuthenticated,)
+
+    permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
     serializer_class = TodoSerializer
 
     def get_queryset(self):
@@ -22,10 +19,3 @@ class TodoViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-
-    def perform_destroy(self, instance):
-        if instance.author == self.request.user:
-            instance.delete()
-
-    def perform_update(self, serializer):
-        pass
