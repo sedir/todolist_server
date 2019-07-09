@@ -9,10 +9,7 @@ from rest_framework_swagger import renderers
 # Create your views here.
 
 
-class TodoViewSet(mixins.ListModelMixin,
-                  mixins.CreateModelMixin,
-                  mixins.DestroyModelMixin,
-                  viewsets.GenericViewSet):
+class TodoViewSet(viewsets.ModelViewSet):
     """
     A set of endpoints to list, create and delete To Do items.
     """
