@@ -7,7 +7,7 @@ authors = ["Sedir Morais <philippi.sedir@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 django = "^2.2"
-djangorestframework = "^3.9"
+djangorestframework = "^3.11"
 djoser = "^1.7"
 django-rest-swagger = "^2.2"
 gunicorn = "^19.9"
